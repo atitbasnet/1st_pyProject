@@ -1,15 +1,6 @@
 import csv
 import sqlite3
 
-
-def create_connection():
-    try:
-        con=sqlite3.connect('users.sqlite3') #creating new database named (users)
-        return con
-    except Exception as e:
-        print(e)
-
-
 INPUT_STRING='''
 ENTER THE OPTION:
 1. Create TABLE
@@ -24,6 +15,16 @@ ENTER THE OPTION:
 10. Press any key to exit
 
 '''
+
+def create_connection():
+    try:
+        con=sqlite3.connect('users.sqlite3') #creating new database named (users)
+        return con
+    except Exception as e:
+        print(e)
+
+
+
 def create_table(con):
     CREATE_USERS_TABLE_QUERY="""
     CREATE TABLE IF NOT EXISTS users(
